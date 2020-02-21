@@ -11,6 +11,7 @@ warnings.filterwarnings('ignore')
 st.header("Image Processing Tool")
 st.sidebar.header("Select Methods")
 
+
 st.write("---")
 # File Selecter
 file = st.file_uploader("Choose an Image File",type = ['png','jpg','jpeg'])
@@ -248,3 +249,16 @@ if st.sidebar.checkbox("Gradients ; Emphasis"):
         plt.imshow(img,cmap ="gray")
         st.pyplot()    
 ##################################################3
+        
+        
+st.header("Save File")
+folder = st.text_input("Input Folder Name")
+name = st.text_input("Input File Name")
+if st.button("save"):
+    try:
+        os.mkdir("{}".format(folder))
+        cv2.imwrite("{}/{}.png".format(folder,name),img)
+    except FileExistsError:
+        st.warning("Folder Exists")
+
+        
