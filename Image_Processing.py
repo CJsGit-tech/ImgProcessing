@@ -118,9 +118,7 @@ if st.sidebar.checkbox("Thrsholding Option"):
         st.pyplot()
         pass
     
-####################################################
-st.sidebar.markdown("Blending: Coming Soon")
-#####################################################
+#################################################################
 if st.sidebar.checkbox("Blurring and Smoothing"):
     st.header("Blurring and Smoothing")
     
@@ -248,9 +246,17 @@ if st.sidebar.checkbox("Gradients ; Emphasis"):
         img = cv2.Laplacian(img,cv2.CV_64F)
         plt.imshow(img,cmap ="gray")
         st.pyplot()    
-##################################################3
-        
-        
+###################################################
+if st.sidebar.checkbox("CannyEdge"):
+    st.header("CannyEdge")        
+    thresh1 = st.number_input("Threshold 1",value = 127,step = 1)
+    thresh2 = st.number_input("Threshold 2",value = 255,step = 1)
+    
+    img = cv2.Canny(img,thresh1,thresh2)
+    plt.imshow(img)
+    st.pyplot()
+####################################################3
+       
 st.header("Save File")
 folder = st.text_input("Input Folder Name")
 name = st.text_input("Input File Name")
