@@ -10,8 +10,7 @@ Clone the repository
 
 
 ```sh
-$ git clone https://github.com/CJtheSloth/iris_streamlit_app
-$ cd streamlit_iris
+$ git clone https://github.com/CJtheSloth/ImgProcessing
 ```
 
 Install the dependencies
@@ -23,5 +22,5 @@ $ pip install pandas streamlit matplotlib,opencv-python
 Run the application on `http://localhost:8501/`
 
 ```sh
-$ streamlit run iris.py
+$ streamlit run Image_Processing.py
 ```
